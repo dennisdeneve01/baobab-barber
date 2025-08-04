@@ -1612,3 +1612,48 @@ h1, h2, h3, h4, h5,
         line-height: 1.2;
         display: block;
         font-size: .8rem; }
+
+
+        .site-logo-icon {
+    height: 30px;          /* Set a fixed height for the icon */
+    width: auto;           /* Let the width adjust automatically to maintain aspect ratio */
+    margin-right: 10px;    /* Add some space between the icon and the text */
+    vertical-align: middle;/* Vertically align the image with the text */
+}
+
+/* Optional: If you want to use flexbox for better alignment */
+.site-logo a {
+    display: flex;
+    align-items: center;   /* This is what will center the icon and text vertically */
+}
+
+
+/* This rule sets the height for the entire hero section */
+.site-section-cover {
+    /* Instead of calc, use a fixed height or a single vh value to simplify the calculation */
+    /* Let's try 90vh, which means 90% of the viewport height */
+    height: 100vh; 
+    
+    /* Remove min-height or set it to a smaller value if you want it to shrink on smaller screens */
+    min-height: 700px; /* This ensures it's never too small */
+    
+    /* Ensure the background is positioned correctly at all times */
+    background-size: cover;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed !important;
+}
+
+/* This rule targets the inner row to control its content's vertical alignment */
+.site-section-cover .container > .row {
+    height: 100%; /* Make the row fill the height of its parent (.site-section-cover) */
+    align-items: center; /* Vertically center the content within the row */
+}
+
+/* This rule is specifically for the parallax effect's override */
+.site-section-cover[data-stellar-background-ratio] {
+    /* Reiterate the most crucial background properties for the library */
+    background-position: center center !important; 
+    background-attachment: fixed !important;
+}
+
